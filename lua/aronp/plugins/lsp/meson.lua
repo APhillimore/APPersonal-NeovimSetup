@@ -1,51 +1,57 @@
 return {
-  {
-    "williamboman/mason-lspconfig.nvim",
-    opts = {
-      ensure_installed = {
-        "ts_ls",
-        "html",
-        "cssls",
-        "tailwindcss",
-        "svelte",
-        "lua_ls",
-        "graphql",
-        "emmet_ls",
-        "pyright",
-        "eslint",
-        "rust_analyzer",
-      },
-    },
-    dependencies = {
-      {
-        "williamboman/mason.nvim",
-        opts = {
-          ui = {
-            icons = {
-              package_installed = "✓",
-              package_pending = "➜",
-              package_uninstalled = "✗",
-            },
-          },
-        },
-      },
-      "neovim/nvim-lspconfig",
-    },
-  },
-  {
-    "WhoIsSethDaniel/mason-tool-installer.nvim",
-    opts = {
-      ensure_installed = {
-        "prettier", -- prettier formatter
-        "stylua", -- lua formatter
-        "isort", -- python formatter
-        "black", -- python formatter
-        "pylint",
-        "eslint_d",
-      },
-    },
-    dependencies = {
-      "williamboman/mason.nvim",
-    },
-  },
+	-- LSP servers
+	{
+		"williamboman/mason-lspconfig.nvim",
+		dependencies = {
+			"williamboman/mason.nvim",
+			"neovim/nvim-lspconfig",
+		},
+		opts = {
+			ensure_installed = {
+				"ts_ls",
+				"eslint",
+				"html",
+				"cssls",
+				"tailwindcss",
+				"svelte",
+				"emmet_ls",
+				"graphql",
+				"lua_ls",
+				"pyright",
+				"rust_analyzer",
+				"clangd",
+			},
+		},
+	},
+
+	-- External formatter / tool binaries (used by conform.nvim)
+	{
+		"WhoIsSethDaniel/mason-tool-installer.nvim",
+		dependencies = {
+			"williamboman/mason.nvim",
+		},
+		opts = {
+			ensure_installed = {
+				"prettier",
+				"ruff",
+				"clang-format",
+				"stylua",
+				"cmakelang",
+			},
+		},
+	},
+
+	-- Mason UI
+	{
+		"williamboman/mason.nvim",
+		opts = {
+			ui = {
+				icons = {
+					package_installed = "✓",
+					package_pending = "➜",
+					package_uninstalled = "✗",
+				},
+			},
+		},
+	},
 }
