@@ -47,5 +47,3 @@ opt.undofile = true
 -- split windows
 opt.splitright = true -- split horiztonal window to the bottom
 opt.splitbelow = true -- split horiztonal window to the bottom
-
-
