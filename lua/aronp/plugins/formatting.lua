@@ -10,6 +10,7 @@ return {
 				typescript = { "prettier" },
 				javascriptreact = { "prettier" },
 				typescriptreact = { "prettier" },
+				json = { "prettier" },
 				svelte = { "prettier" },
 
 				python = { "ruff_format" },
